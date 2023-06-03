@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STONE PAPER SCISSOR</title>
+    <style>
+        body{
+            background-image:url(https://nypost.com/wp-content/uploads/sites/2/2014/06/rock-paper.jpg?quality=75&strip=all);
+            background-size: cover;
+        }
+        h1{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        THNAK YOU FOR PLAYING
+    </h1>
+    <script>
+        let name=prompt("enter your name :")
+        let runagain=true
+        let c=0
+        let u=0
+        while(runagain)
+        {
+            let user=prompt("enter s for stone, p for paper & sr for scissor")
+            let cpu1=Math.floor((Math.random)()*3)
+            let cpu=['s','p','sc'][cpu1]
+            const match = (cpu,user)=>{
+                if(cpu === user)
+                {
+                    return 'nobody'
+                }
+                else if(cpu==='s' && user==='p')
+                {
+                    return name
+                }
+                else if(cpu==='s' && user==='sc')
+                {
+                    return 'rutesh'
+                }
+                else if(cpu==='sc' && user==='s')
+                {
+                    return name
+                }
+                else if(cpu==='sc' && user==='p')
+                {
+                    return 'rutesh'
+                }
+                else if(cpu==='p' && user==='sc')
+                {
+                    return name
+                }
+                else if(cpu==='p' && user==='s')
+                {
+                    return 'rutesh'
+                }
+            }
+                let result=match(cpu,user)
+                if(result===name)
+                {
+                    u=u+1
+                }
+                if(result==='rutesh')
+                {
+                    c=c+1
+                }
+                alert(`rutesh : ${cpu} \n ${name} : ${user} \n The winner is : ${result}`)
+                alert(`SCORE - rutesh=${c} : ${name}= ${u}`)
+                runagain=confirm("DO you want to play again ?")
+        }
+
+    </script>
+</body>
+</html>
